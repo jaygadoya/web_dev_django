@@ -1,11 +1,15 @@
-# web_dev_django
-The repository contains guide and code to develop application using Django. It contains code for all the features present in Django. MVC model code applications are present too in this repository.
+There are two types of form validations in Django.
 
-====================================================================================
+1. Explicit validations
 
-I have added this in README.md file, as these are repetitive tasks which are performed when
-we create any Django project from scratch.
+=> In this validation method we have to use clean method to perform validations for the 
+   value passed in the form.
 
+2. Implict validations 
+
+=> In this we use django.core module to perform validation.
+
+The below are the steps to create a django project and web application.
 
 1. Create a Django project.
    command: django-admin startproject employeeProject
@@ -16,7 +20,7 @@ we create any Django project from scratch.
 3. Register the application.
    Inside settings.py file register the application name: 'employeeapp' under Installed_Apps list
 
-4. Create a templates folder on project level, as we would require html file for the frontend.
+4. Create a templates folder on project level, as we would require html file for the fronend.
     command: mkdir templates
 
 5. Create a static folder, this folder will hold two sub folders images and css.
@@ -31,6 +35,7 @@ we create any Django project from scratch.
    Add this variable inside the list the variable name should strictly be STATICFILES_DIRS = [STATIC]. 
    This variable name is internally used by pythons django module so if we use any other name it will not load the page correctly.
 
+8. Create a forms.py file on application level.
+   touch forms.py
 
-The above 7 steps is same for creating any Django project.
-Whenever we create a Django project from scratch, we have to follow these 7 steps, so it works as a base for any Django project we create.
+9. Inside this forms.py file create a class feedbackforms. This will inherit forms.Forms
