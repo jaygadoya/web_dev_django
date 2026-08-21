@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Shifts</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed,#06b6d4);
+}
+
+/* Background graphics */
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+}
+
+.circle1{
+    width:250px;
+    height:250px;
+    top:10%;
+    left:10%;
+}
+
+.circle2{
+    width:180px;
+    height:180px;
+    bottom:12%;
+    right:12%;
+}
+
+.circle3{
+    width:120px;
+    height:120px;
+    top:20%;
+    right:20%;
+}
+
+.card{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    padding:50px 40px;
+    border-radius:24px;
+    color:white;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+.card h1{
+    margin-bottom:15px;
+    font-size:2.2rem;
+}
+
+.card p{
+    margin-bottom:30px;
+    opacity:0.9;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 40px;
+    background:white;
+    color:#4f46e5;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-3px) scale(1.05);
+    box-shadow:0 10px 25px rgba(255,255,255,0.4);
+}
+</style>
+</head>
+<body>
+
+<div class="circle circle1"></div>
+<div class="circle circle2"></div>
+<div class="circle circle3"></div>
+
+<div class="card">
+    <h1>Employee Shift Dashboard</h1>
+    <p>View employee shift schedules and workforce information.</p>
+    <button><a href="/shifts">Shift Timings</a></button>
+</div>
+
+</body>
+</html>

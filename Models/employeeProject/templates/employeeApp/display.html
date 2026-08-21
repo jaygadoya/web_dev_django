@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees Dashboard</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            background:linear-gradient(135deg,#4f46e5,#7c3aed,#06b6d4);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:40px;
+        }
+
+        .container{
+            width:100%;
+            max-width:1200px;
+            background:rgba(255,255,255,0.15);
+            backdrop-filter:blur(15px);
+            border:1px solid rgba(255,255,255,0.2);
+            border-radius:20px;
+            padding:35px;
+            box-shadow:0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            text-align:center;
+            color:white;
+            margin-bottom:25px;
+            font-size:2.2rem;
+        }
+
+        .subtitle{
+            text-align:center;
+            color:white;
+            margin-bottom:30px;
+            opacity:0.9;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            overflow:hidden;
+            border-radius:15px;
+            background:white;
+        }
+
+        thead{
+            background:#4f46e5;
+            color:white;
+        }
+
+        th, td{
+            padding:15px;
+            text-align:left;
+        }
+
+        tbody tr:nth-child(even){
+            background:#f4f7ff;
+        }
+
+        tbody tr:hover{
+            background:#e8ecff;
+            transition:0.3s;
+        }
+
+        th{
+            font-weight:600;
+        }
+
+        .badge{
+            background:#4f46e5;
+            color:white;
+            padding:4px 10px;
+            border-radius:20px;
+            font-size:12px;
+        }
+
+        @media(max-width:768px){
+            .container{
+                padding:20px;
+            }
+
+            table{
+                font-size:14px;
+            }
+
+            th, td{
+                padding:10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>👨‍💼 Employee Directory</h1>
+        <p class="subtitle">Welcome to the Employees Dashboard</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee Number</th>
+                    <th>Employee Name</th>
+                    <th>Employee Address</th>
+                    <th>Phone Number</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for emp in employees %}
+                <tr>
+                    <td>{{ emp.emp_no }}</td>
+                    <td>{{ emp.emp_name }}</td>
+                    <td>{{ emp.emp_address }}</td>
+                    <td>{{ emp.emp_phonenumber }}</td>
+                    <td>
+                        <span class="badge">
+                            {{ emp.emp_title }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
